@@ -11,9 +11,16 @@ Tested only on Windows 10, should work on any LGPO supported system.
 The following files should be hosted on internal/external site, available for download by the script:<br/><br/>
 <b>Note! Same password should be used for all zip files. Zip encryption is mostly used as integrity control.</b>
  * LGPO.exe — Microsoft Local Group Policy Object Utility
- * GPO.zip — Password protected zip of GPO backup folder — may be produced by AD GPMC backup, SCM and more. The zip is expected to host 'GPO' directory, holding the GPO {ID} folder tree and manifest.
- * ADMX.zip — Password protected zip of ADMX and ADML files — may be downloaded from various sources. The zip is expected to host 'ADMX' directory, hodling under it the ADMX files and 'en-us' ADML folder.
-
+ * GPO.zip — Password protected zip of GPO backup folder — may be produced by AD GPMC backup, SCM and more. The zip is expected to host 'GPO' directory, holding the GPO {ID} folder tree and manifest.<br/>
+ GPO.zip_<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|GPO_<br/>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|{GPO GUID}_<br/>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|manifest.xml<br/>
+ * ADMX.zip — Password protected zip of ADMX and ADML files — may be downloaded from various sources. The zip is expected to host 'ADMX' directory, hodling under it the ADMX files and 'en-us' ADML folder.<br/>
+ ADMX.zip_<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|ADMX_<br/>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|/en-us/*.adml<br/>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|*.admx<br/>
 
 ### Configurable options:
 The following settings should be modified in 'deployment.py':
