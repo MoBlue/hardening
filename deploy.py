@@ -11,6 +11,8 @@ import shutil
 rootpath = r'C:/Installs/' # root path for deployment
 win10path = os.path.join(rootpath, 'WIN10/') # optional Version folder
 
+admxFlag = 1
+
 lgpoURL = 'https://{SITE}/LGPO.exe' # Microsoft LGPO link
 win10gpoURL = 'https://{SITE}/GPO.zip' # Encrypted Zipped GPO backup in folder named 'GPO' - GPO.zip => /GPO/{GPO Backup Files}
 win10admxURL = 'https://{SITE}/ADMX.zip' # Encrypted Zipped ADMX + ADML in folder named 'ADMX' - => /ADMX/{ADMX Files}/en-us/{ADML Files}
@@ -143,12 +145,13 @@ with disable_file_system_redirection():
         print downloadLGPO()
         print ('download & unzip WIN10 gpo:')
         print downloadWIN10()
-        print ('download & unzip ADMX:')
-        print downloadADMX()
-        print ('copyADMX:')
-        print copyADMX()
-        print ('copyADML:')
-        print copyADML()
-        print ('ImplementGPO:')
+        if admxFlag:
+            print ('download & unzip ADMX:')
+            print downloadADMX()
+            print ('copy ADMX:')
+            print copyADMX()
+            print ('copy ADML:')
+            print copyADML()
+        print ('Implement GPO:')
         print ImplementGPO()
         print ('Completed')
