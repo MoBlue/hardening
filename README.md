@@ -25,6 +25,7 @@ The following files should be hosted on internal/external site, available for do
 The following settings should be modified in 'deployment.py':
  * rootpath = r'C:/Installs/' # local root path for files and folders
  * win10path = os.path.join(rootpath, 'WIN10/') # optional Version folder under local root path
+ * admxFlag = 1 # 0 or 1 for ADMX download and deploy
  * lgpoURL = 'https://{SITE}/LGPO.exe' # Microsoft LGPO download link
  * win10gpoURL = 'https://{SITE}/GPO.zip' # Encrypted Zipped GPO backup download link
  * win10admxURL = 'https://{SITE}/ADMX.zip' # Encrypted Zipped ADMX/ADML download link
